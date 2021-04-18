@@ -1,0 +1,29 @@
+.btn1-custom {
+  border-left: 1px solid black;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  /* background-color: #06aed5; */
+  color: white;
+}
+​ .btn-custom:hover {
+  font-size: 40px;
+  transition: all 0.3s ease-in-out;
+}
+
+.row-custom {
+  height: 40px;
+}
+
+.col-custom {
+  margin-bottom: 5px;
+}
+
+.p-custom {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.img-custom {
+  cursor: pointer;
+  /* margin: 10px; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
