@@ -1,4 +1,6 @@
 //
+const API_SERVER = "https://api.giphy.com";
+const API_END_POINT = "/v1/gifs/search";
 const API_KEY = "m39euATa9KeZDVwEi4Mejq1Wfbvgfthw";
 const IMG_PER_PAGE = 20;
 
@@ -219,7 +221,7 @@ function ProcessButton() {
       //
     }
     //
-    var apiUrl = "https://api.giphy.com/v1/gifs/search";
+    var apiUrl = API_SERVER + API_END_POINT;
     apiUrl = apiUrl + "?q=" + searchText + "&limit=" + pageLimit;
     apiUrl = apiUrl + "&api_key=" + API_KEY;
     //
