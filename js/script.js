@@ -8,7 +8,16 @@ const searchFormDiv = $("#search-form");
 const imagesDiv = $("#images");
 
 // Variables
-var TOPICS = ["dogs", "cats", "rabbits", "hamsters", "lions", "cheetas"];
+var TOPICS = [
+  "dogs",
+  "cats",
+  "rabbits",
+  "hamsters",
+  "wolfs",
+  "lions",
+  "cheetas",
+  "bulls",
+];
 var NUMBER_OF_TOPICS = TOPICS.length;
 
 // Render the topics
@@ -20,19 +29,20 @@ function RenderTopics() {
   topicsDiv.empty();
   //
   rowEl = $("<div>");
-  rowEl.addClass("row row-custom");
+  // rowEl.addClass("row row-custom");
+  rowEl.addClass("d-flex flex-wrap row row-cols-auto row-custom");
   //
   for (var i = 0; i < NUMBER_OF_TOPICS; i++) {
     //
     topic = TOPICS[i];
     //
     colEl = $("<div>");
-    colEl.addClass("col-md-2 col-sm-3 col-4 col-custom");
+    // colEl.addClass("col-md-2 col-sm-3 col-4 col-custom");
+    colEl.addClass("col col-custom");
     //
     btnEl = $("<button>");
     btnEl.text(topic);
     btnEl.attr("image-text", topic);
-    // btnEl.addClass("btn btn-dark text-capitalize");
     btnEl.addClass("btn btn-dark text-capitalize btn-custom");
     btnEl.appendTo(colEl);
     //
@@ -60,7 +70,7 @@ function RenderSearchForm() {
     "placeholder",
     "Search for an animal or select from the list below..."
   );
-  inputEl.addClass("form-control");
+  inputEl.addClass("form-control user-select-all");
   inputEl.appendTo(rowEl);
   //
   inputEl = $("<button>");
@@ -127,7 +137,8 @@ function RenderImage(data) {
   // console.log(data);
   //
   rowEl = $("<div>");
-  rowEl.addClass("row d-flex flex-wrap");
+  // rowEl.addClass("row d-flex flex-wrap");
+  rowEl.addClass("d-flex align-content-stretch flex-wrap row row-cols-auto");
   //
   for (var i = 0, l = data.length; i < l; i++) {
     //
@@ -138,7 +149,8 @@ function RenderImage(data) {
 
     // Create a colum
     colEl = $("<div>");
-    colEl.addClass("col-md-3 col-sm-3 col-4 text-center col-custom");
+    // colEl.addClass("col-md-3 col-sm-3 col-4 text-center col-custom");
+    colEl.addClass("col text-center col-custom");
     colEl.attr("col-number");
     //
     // Create an image
@@ -149,7 +161,7 @@ function RenderImage(data) {
     imgEl.attr("src", fixedImg);
     // imgEl.attr("");
     // imgEl.addClass("img-fluid img-thumbnail");
-    imgEl.addClass("img-fluid img-custom");
+    imgEl.addClass("img-fluid shadow-lg d-block");
     imgEl.appendTo(colEl);
     //
     pEl = $("<p>");
@@ -207,7 +219,7 @@ function ProcessButton() {
       //
     }
     //
-    var apiUrl = "http://api.giphy.com/v1/gifs/search";
+    var apiUrl = "https://api.giphy.com/v1/gifs/search";
     apiUrl = apiUrl + "?q=" + searchText + "&limit=" + pageLimit;
     apiUrl = apiUrl + "&api_key=" + API_KEY;
     //
